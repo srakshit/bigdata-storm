@@ -7,7 +7,8 @@ ENV STORM_HOME="/opt/storm" \
 
 ADD ./storm-download.sh /opt/
 
-RUN chmod +x /opt/storm-download.sh \
+RUN apk add --no-cache python2 \
+    && chmod +x /opt/storm-download.sh \
 	&& sleep 1 \
     && /opt/storm-download.sh \
 	&& rm /opt/storm-download.sh \
