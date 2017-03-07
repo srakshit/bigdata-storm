@@ -17,6 +17,4 @@ RUN apk add --no-cache python2 \
     && adduser -S -G storm storm \
 	&& chown storm:storm -R $STORM_HOME
 
-USER storm
-
 EXPOSE 3772 3773 6627
