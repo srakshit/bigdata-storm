@@ -12,8 +12,8 @@ RUN chmod +x /opt/storm-download.sh \
     && /opt/storm-download.sh \
 	&& rm /opt/storm-download.sh \
 	&& ln -s /opt/apache-storm-$STORM_VERSION $STORM_HOME \
-	&& groupadd storm \
-    && useradd -r -g storm storm \
+	&& addgroup storm \
+    && adduser -S -G storm storm \
 	&& chown storm:storm -R $STORM_HOME
 
 USER storm
