@@ -7,7 +7,6 @@ ENV STORM_HOME="/opt/storm" \
 
 ADD ./storm-download.sh /opt/
 ADD ./storm-properties.sh /opt/
-ADD ./storm.yaml.template $STORM_HOME/conf/storm.yaml
 
 RUN apk add --no-cache python2 supervisor \
     && chmod +x /opt/storm-download.sh \
@@ -22,3 +21,5 @@ RUN apk add --no-cache python2 supervisor \
     && chmod 754 /opt/ \
 	&& chown storm:storm -R /var/log/storm/ \
     && chmod 754 /var/log/storm/
+
+ADD ./storm.yaml.template $STORM_HOME/conf/storm.yaml
