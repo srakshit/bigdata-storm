@@ -1,6 +1,8 @@
 storm.zookeeper.servers:
      - "%zookeeper%"
 
+storm.zookeper.port: 2181
+
 nimbus.seeds: ["%nimbus%"]
 
 drpc.servers:
